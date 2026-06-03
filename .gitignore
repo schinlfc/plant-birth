@@ -1,0 +1,103 @@
+# ==============================================================================
+# .gitignore for Academic Claude Code Projects
+# ==============================================================================
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
+*.run.xml
+*-blx.bib
+
+# Compiled PDFs (uncomment to track specific PDFs)
+# *.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Rdata
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code local files (not shared across machines)
+.claude/settings.local.json
+.claude/state/
+CLAUDE.local.md
+
+# IDE
+# .vscode/settings.json ships in the template (carries shipped Claude Code permission-mode
+# recommendations — see TROUBLESHOOTING.md "Permissions / bypass / statusline" for the typo
+# fix forkers need). Other .vscode/ content is developer-machine-specific.
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Quarto rendering artifacts
+.quarto/
+
+# quality_reports/ — per-project session logs, plans, specs, merges.
+# The directory structure ships in the template (via .gitkeep), but the
+# content is PROJECT-INTERNAL and shouldn't be inherited by forks.
+quality_reports/plans/*
+quality_reports/specs/*
+quality_reports/session_logs/*
+quality_reports/merges/*
+quality_reports/decisions/*
+quality_reports/checkpoints/*
+quality_reports/preregistrations/*
+!quality_reports/plans/.gitkeep
+!quality_reports/specs/.gitkeep
+!quality_reports/session_logs/.gitkeep
+!quality_reports/merges/.gitkeep
+!quality_reports/decisions/.gitkeep
+!quality_reports/checkpoints/.gitkeep
+!quality_reports/preregistrations/.gitkeep
+
+# R analysis outputs (generated artifacts; keep scripts, ignore outputs)
+scripts/R/_outputs/
+
+# Output artifacts — uncomment lines below based on your preference
+# *.rds
+# output/**/*.rds
+
+# ==============================================================================
+# CONFIDENTIAL RESEARCH DATA — NEVER COMMIT
+# Texas vital records (geocoded to census tract) + EIA/EPA pollution data.
+# Raw data lives in these dirs and is treated as read-only input, not versioned.
+# ==============================================================================
+birth/
+earth_justic_data_codes/
+
+# Defense-in-depth: ignore data-file types anywhere in the tree, in case a
+# raw extract is ever written outside the dirs above. Aggregated, non-identifying
+# results for the paper are committed as .tex (esttab) and .pdf/.png (figures),
+# which are NOT ignored here. To commit an aggregated .csv later, carve out an
+# explicit "!path/to/file.csv" exception below.
+*.dta
+*.dbf
+*.csv
+*.xls
+*.xlsx
+*.zip
+*.gph
+*.smcl
