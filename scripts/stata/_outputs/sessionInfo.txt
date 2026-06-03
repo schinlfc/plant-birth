@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/schin/plant-birth/scripts/stata/_outputs/sessionInfo.txt
+  log type:  text
+ opened on:   3 Jun 2026, 13:09:14
+
+. about
+
+StataNow/SE 19.5 for Unix (Apple Silicon)
+Revision 18 Feb 2026
+Copyright 1985-2025 StataCorp LLC
+
+Total usable memory: 64.00 GB
+
+Stata license: Unlimited-user network, expiring 17 Jul 2026
+Serial number: 401909312893
+  Licensed to: Lafayette College
+               Lafayette College
+
+. * which reghdfe
+. * which csdid
+. * which estout
+. log close
+      name:  <unnamed>
+       log:  /Users/schin/plant-birth/scripts/stata/_outputs/sessionInfo.txt
+  log type:  text
+ closed on:   3 Jun 2026, 13:09:14
+-------------------------------------------------------------------------------
