@@ -11,14 +11,23 @@ paths:
 
 <!-- Claude reads this before writing analysis code or manuscript content. Keep it current. -->
 
+## Status & Headline Finding (2026-06-04)
+
+**Design evolved:** decommissioning (out of window) → **CAIR-era pollution-control RETROFITS** (in window).
+**Result:** robust, well-identified **null co-benefit**. The causal chain is strong at link 1 and broken at link 2:
+1. retrofit → plant SO₂/NOₓ emissions: **STRONG** (EPA CEMS, verified).
+2. coal-emissions exposure → **local ambient pollution**: **≈ ZERO** (PM₂.₅ F=0.25; SO₂ p=0.97; lead p=0.06 weak/10-cluster).
+3. ambient → infant health: mean birthweight precise null; general PM₂.₅ borderline on LBW (p=0.065) / fetal death (p=0.10), **not coal-attributable**.
+Mechanism: coal SO₂/NOₓ → regional secondary PM (not local primary); low ambient SO₂/lead. Manuscript scaffolded (`manuscript/main.tex`).
+
 ## Research Design
 
-- **Question:** Do coal-fired power-plant decommissioning events improve infant health in Texas, via reduced ambient air pollution?
-- **Treatment:** Staggered decommissioning of coal generators (EIA nameplate capacity → 0; also large capacity reductions). Treatment timing varies across plants → **staggered adoption**.
-- **Mechanism / exposure:** ambient **air pollution** at EPA monitors near plants — lead (Pb) in hand (AQS + IMPROVE); ozone / PM2.5 / SO₂ / NOₓ to be added. Exposure intensity ≈ plant capacity × proximity (distance bands ≤3/5/10 km).
-- **Outcomes:** birth weight (g), low birth weight (<2500 g), very low birth weight, gestational age / preterm (<37 wk), fetal death; possibly sex ratio, APGAR.
-- **Population:** Texas births & fetal deaths 2003–2010, geocoded to census tract; assigned to plants/monitors by distance.
-- **Identification:** staggered DiD / event study with **heterogeneity-robust estimators** (Callaway–Sant'Anna, Sun–Abraham, de Chaisemartin–D'Haultfœuille, Borusyak et al.). Plain TWFE only as a benchmark.
+- **Question:** Do coal-plant **pollution-control retrofits** improve infant health in Texas (intent-to-treat)?
+- **Treatment:** staggered CAIR-era control retrofits (FGD/SCR/SNCR/baghouse/ACI), 12 TX coal plants, 2003–2010 (wave 2008–10); CEMS-verified emission drops.
+- **Mechanism / exposure:** ambient pollution at EPA monitors — PM₂.₅ (88101), SO₂ (42401), lead (repo); pregnancy-window (trailing 9-mo) mean at nearest monitor; coal-attributed via inverse-distance CEMS emissions.
+- **Outcomes:** birth weight (`b_wt_gr`), LBW (<2500g), fetal-death rate (ZIP×year, from `Fet*.dbf`). NO gestation/preterm var in the birth file.
+- **Population:** TX live births 2005–2010 (`birth/combined_birth_data.dta`, live births only; 2003–04 too sparse); fetal deaths from `birth/Fet*.dbf` (`F_RZIP`).
+- **Identification:** tract (or ZIP) + birth-year-month FE; cluster by monitor; CS/SA event study + continuous exposure + 2SLS (PM₂.₅/SO₂ instrumented by coal emissions). Pipeline: `scripts/stata/01–09`.
 
 ## Variable / Estimand Registry
 
