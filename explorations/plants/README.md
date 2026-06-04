@@ -206,3 +206,31 @@ population monitors). So the "coal controls → infant health via local PM₂.�
 PM₂.₅ is the wrong exposure for *coal* attribution. Coal's local signatures are **SO₂** (coal is the
 dominant SO₂ source; scrubbers cut it directly — first stage should be strong) and **lead** (the original
 project's focus; repo has TX lead monitors). Re-test link-2 + health with **ambient SO₂ and lead**.
+
+## UPDATE 7 — SO₂ + lead re-test: link-2 fails across all pollutants
+`scripts/stata/08_so2.do`, `09_lead.do`. First stage (coal-emissions exposure → local ambient, tract+year FE):
+
+| Pollutant | Coal→ambient first stage | Health (ambient → outcomes) |
+|---|---|---|
+| PM₂.₅ | F = 0.25 (≈0) | bw null; LBW p=0.065, fetal p=0.10 (general PM, borderline) |
+| SO₂ | +0.02 ppb/SD, p=0.97 (≈0) | wrong-signed (bw +2.7/ppb p=0.01) — confounded |
+| Lead | +0.0008/SD, **p=0.061** (only hint; 10 clusters, F≈4.6 weak) | uninformative (bw SE=492) / wrong-signed LBW |
+
+**Robust multi-pollutant conclusion:** coal-plant emissions and their CAIR-era control-driven changes do
+**not** move local ambient pollution at TX population monitors (link-2 ≈ 0 for PM₂.₅ and SO₂; only a weak,
+fragile lead hint consistent with lead being primary/local). The treatment→plant-emissions first stage is
+strong (CEMS), but **treatment→population-ambient-exposure is the broken link** — so there is no
+identifiable infant-health co-benefit pathway via ambient exposure in this setting. Borderline PM₂.₅
+tail/mortality signals are general ambient PM, not coal-attributable.
+
+**Why (mechanism):** coal SO₂/NOₓ → *regional secondary* PM (not local primary at monitors); ambient SO₂
+already very low (~1 ppb); lead post-leaded-gasoline very low (~0.01 µg/m³) with sparse monitors; coal is a
+small marginal contributor to local population ambient exposure in 2005–2010 TX.
+
+## Bottom line for the manuscript (decision)
+The coal-controls→infant-health design, identified off ambient monitors with tract+year FE, yields a
+**robust, well-identified null** with a clear mechanistic explanation. Viable framings:
+1. **Precisely-estimated null co-benefit** paper (policy-relevant; coal's small ambient footprint explains it).
+2. **Reframe to general PM₂.₅ → infant health in TX** (drop coal attribution; tail/mortality borderline).
+3. **Return to the original lead/proximity/IQ syllogism** (consulting-style; not a clean causal DiD).
+4. **Reconsider viability** in TX 2005–2010 given binding data limits (window, monitor sparsity, coal footprint).
