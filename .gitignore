@@ -101,3 +101,6 @@ earth_justic_data_codes/
 *.zip
 *.gph
 *.smcl
+
+# LaTeX build output
+manuscript/main.pdf
