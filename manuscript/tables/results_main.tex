@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{The causal chain: coal-plant control retrofits $\to$ emissions $\to$ ambient pollution $\to$ infant health, Texas 2005--2010}
+\label{tab:results_main}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & PM$_{2.5}$ & SO$_2$ & Lead \\
+\midrule
+\multicolumn{4}{l}{\textit{Panel A. Link 1: retrofit $\to$ plant emissions (EPA CEMS)}} \\
+\quad Emission drop at retrofit & \multicolumn{3}{c}{Strong; verified (e.g.\ W.A.\ Parish NO$_x$ $\downarrow$ at 2004 SCR; Pirkey SO$_2$ $-85\%$ at 2006)} \\[4pt]
+\multicolumn{4}{l}{\textit{Panel B. Link 2: coal-emissions exposure $\to$ local ambient (per SD; tract$+$ym FE)}} \\
+\quad Ambient level & 0.67 & 0.017 & 0.0008 \\
+\quad \quad (SE) & (1.32) & (0.51) & (0.0004) \\
+\quad First-stage $F$ & 0.25 & 0.00 & 4.6 \\[4pt]
+\multicolumn{4}{l}{\textit{Panel C. Link 3: ambient pollution $\to$ infant health (per unit; tract$+$ym FE)}} \\
+\quad Birth weight (g) & $-0.83$ & $2.74^{**}$ & 4.0 \\
+\quad \quad (SE) & (1.46) & (1.05) & (492) \\
+\quad Low birth weight (pp) & $0.083^{*}$ & $-0.095^{*}$ & $-0.35^{***}$ \\
+\quad \quad (SE) & (0.044) & (0.053) & (0.104) \\
+\quad Fetal-death rate (per 1{,}000) & $0.19$ & --- & --- \\
+\quad \quad (SE) & (0.11) & & \\[4pt]
+\multicolumn{4}{l}{\textit{Panel D. Reduced form: coal-emissions exposure $\to$ health (per SD)}} \\
+\quad Birth weight (g) & \multicolumn{3}{c}{$6.3$ \ (5.1), $p=0.22$} \\
+\quad Low birth weight (pp) & \multicolumn{3}{c}{$-0.22$ \ (0.16), $p=0.19$} \\
+\midrule
+\multicolumn{4}{p{0.92\linewidth}}{\footnotesize \textit{Notes.} Births within 30 km of an ambient monitor (PM$_{2.5}$/SO$_2$/lead) and 50 km of a coal plant, Texas 2005--2010; confidential tract-geocoded vital records. All specifications include census-tract and birth-year-month fixed effects; standard errors clustered by monitor. Exposure is the pregnancy-window (trailing 9-month) ambient mean at the nearest monitor; coal-emissions exposure is inverse-distance-weighted CEMS SO$_2$+NO$_x$. Lead estimates rest on 10 monitor clusters. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$. The wrong-signed SO$_2$/lead health coefficients reflect confounding/small-cluster artifacts, not protective effects; see text.} \\
+\bottomrule
+\end{tabular}
+\end{table}
